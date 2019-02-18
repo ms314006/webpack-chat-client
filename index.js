@@ -59,11 +59,14 @@ const enterTheChat = () => {
 }
 
 const enterTheMessage = () => {
+    let message = document.getElementById('message').value
+    if(message === '')
+        return
     const messageData = {
         type: 'catchMessage',
         name: localStorage.getItem('nickName')
     }
-    messageData.message = document.getElementById('message').value
+    messageData.message = message
     ws.send(JSON.stringify(messageData))
 
     messageData.message = document.getElementById('message').value = ''

@@ -1,3 +1,13 @@
+(function () {
+    document.getElementById("message")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault()
+            if (event.keyCode == 13) {
+                document.getElementById("enterTheMessage").click()
+            }
+        })()
+})
+
 let ws = null
 
 const webSocketInit = () => {
@@ -24,7 +34,7 @@ const webSocketInit = () => {
         for (let i = 0; i <= arrEvent.length - 1; i++) {
             chatList += `<p>${arrEvent[i].name}：${arrEvent[i].chat}</p>`
         }
-        if(chatList === ''){
+        if (chatList === '') {
             return
         }
         let chatBlock = document.getElementById('chatBlock')
@@ -60,7 +70,7 @@ const enterTheChat = () => {
 
 const enterTheMessage = () => {
     let message = document.getElementById('message').value
-    if(message === '')
+    if (message === '')
         return
     const messageData = {
         type: 'catchMessage',

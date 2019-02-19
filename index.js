@@ -5,8 +5,8 @@
             if (event.keyCode == 13) {
                 document.getElementById("enterTheMessage").click()
             }
-        })()
-})
+        })
+}())
 
 let ws = null
 

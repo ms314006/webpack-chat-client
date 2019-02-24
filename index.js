@@ -18,10 +18,6 @@ const webSocketInit = () => {
         document.getElementById('nickNameBlock').style.display = 'none'
         document.getElementById('inputMessage').style.display = 'inline-block'
         document.getElementById('connectState').innerHTML = '連線成功！已加入聊天室！'
-
-        setInterval(()=>{
-            ws.send('keep connection')
-        },5000)
     }
 
     ws.onclose = () => {
